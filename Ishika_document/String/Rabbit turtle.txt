@@ -1,0 +1,18 @@
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        ListNode tortoise = head;
+        ListNode rabbit = head;
+
+        while(rabbit != null && rabbit.next != null){
+            tortoise = tortoise.next;
+            rabbit = rabbit.next.next;
+        }
+
+        return tortoise;
+    }
+}
+
+The problem is to identify the middle element or node of the given Singly Linked List and return second middle element if the length of List is even. Basically there are two approaches to solve this problem:
+
+Approach 1: Brute Force TC:O(N)+O(N/2)
+Approach 2: Tortoise Rabbit Algorithm TC:O(N/2)
